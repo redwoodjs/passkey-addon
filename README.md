@@ -6,20 +6,34 @@ This addon provides passkey (WebAuthn) authentication for a RedwoodSDK project.
 
 These instructions assume you are starting with a new RedwoodSDK project, for example from `npx create-rwsdk -t minimal my-project-name`.
 
-### 0. Download this addon
+### 0. Decide whether to add this manually or via AI
+
+To use your editor's AI agent support to add this addon for you (e.g. Cursor, VSCode Copilot):
+1. Make sure your project dir is open in your editor. You can create a new project with: `npx create-rwsdk -t minimal my-project-name`
+2. Open a new AI chat window for your project
+3. Make sure you are in `Agent` mode
+4. Send the following chat prompt in the chat window - it will do the rest for you!
+
+```
+Please apply this addon to my RedwoodSDK project using these instructions: https://raw.githubusercontent.com/redwoodjs/passkey-addon/refs/heads/main/README.md
+```
+
+Alternatively, to apply this addon manually, simply follow the steps below.
+
+### 1. Download this addon
 
 ```
 npx degit redwoodjs/sdk-experiments/passkey-addon _tmp_passkey_addon
 ```
 
-### 1. Copy files
+### 2. Copy files
 
 Copy the `src` directory from this addon into your project's root directory. This will add the following directories:
 
 - `src/passkey`: Core logic for passkey authentication.
 - `src/session`: Session management using a Durable Object.
 
-### 2. Update `package.json`
+### 3. Update `package.json`
 
 Add the following dependencies to your `package.json` file:
 
@@ -33,7 +47,7 @@ Add the following dependencies to your `package.json` file:
 
 Then run `pnpm install`.
 
-### 3. Update `wrangler.jsonc`
+### 4. Update `wrangler.jsonc`
 
 Update your `wrangler.jsonc` to add Durable Object bindings, environment variables, and database migrations.
 
@@ -72,7 +86,7 @@ Update your `wrangler.jsonc` to add Durable Object bindings, environment variabl
 
 Remember to change `WEBAUTHN_APP_NAME` to your app's name.
 
-### 4. Update `src/worker.tsx`
+### 5. Update `src/worker.tsx`
 
 Modify your `src/worker.tsx` to integrate the passkey authentication and routes.
 
@@ -113,7 +127,7 @@ export default defineApp([
 ]);
 ```
 
-### 5. Update `src/app/pages/Home.tsx`
+### 6. Update `src/app/pages/Home.tsx`
 
 Add a login link to your `Home.tsx` page.
 
@@ -132,7 +146,7 @@ export function Home({ ctx }: RequestInfo) {
 }
 ```
 
-### 6. Run the dev server
+### 7. Run the dev server
 
 Now you can run the dev server:
 
