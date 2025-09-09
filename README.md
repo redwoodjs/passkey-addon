@@ -72,6 +72,7 @@ Update your `wrangler.jsonc` to add Durable Object bindings, environment variabl
   // Environment variables
   "vars": {
     "WEBAUTHN_APP_NAME": "My Awesome App",
+    "WEBAUTHN_RP_ID": "localhost"
   },
 
   // Migrations
@@ -146,28 +147,21 @@ export function Home({ ctx }: RequestInfo) {
 }
 ```
 
-### 7. Create an `.env` file.
+### 7. Run the dev server
 
-In the root of the project, create an `.env` file if one doesn't already exist and add the following:
-
-```text
-WEBAUTHN_RP_ID=localhost
-```
-
-Cloudflare uses a `.dev.vars` file, however, RedwoodSDK, uses the more common `.env` file. The framework creates a symlink for `.dev.vars` the first time we run the dev server.
-
-Then, we need to update the Environment Types:
-
-```shell
-npx wrangler types
-```
-
-### 8. Run the dev server
-
-Now you can run the dev server:
+The first time you run the development server, it will generate the `.wrangler` folder and local Cloudflare environment.
 
 ```shell
 pnpm dev
 ```
+
+
+### 8. Generate Types
+
+```shell
+pnpm generate
+```
+
+This will ensure that all the environmental types needed for the Passkey Auth are generated
 
 You should now have a working passkey authentication flow in your RedwoodSDK application!
