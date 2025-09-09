@@ -41,7 +41,7 @@ Add the following dependencies to your `package.json` file:
 "dependencies": {
   "@simplewebauthn/browser": "^13.1.0",
   "@simplewebauthn/server": "^13.1.1",
-  "rwsdk": "0.1.6"
+  "rwsdk": "0.3.6"
 }
 ```
 
@@ -71,7 +71,8 @@ Update your `wrangler.jsonc` to add Durable Object bindings, environment variabl
 
   // Environment variables
   "vars": {
-    "WEBAUTHN_APP_NAME": "My Awesome App"
+    "WEBAUTHN_APP_NAME": "My Awesome App",
+    "WEBAUTHN_RP_ID": "localhost"
   },
 
   // Migrations
@@ -84,7 +85,7 @@ Update your `wrangler.jsonc` to add Durable Object bindings, environment variabl
 }
 ```
 
-Remember to change `WEBAUTHN_APP_NAME` to your app's name.
+Remember to change `WEBAUTHN_APP_NAME` to your app's name and `WEBAUTH_RP_ID` to a unique ID for you application. For local development, `localhost` is fine.
 
 ### 5. Update `src/worker.tsx`
 
