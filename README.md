@@ -147,7 +147,13 @@ export function Home({ ctx }: RequestInfo) {
 }
 ```
 
-### 7. Run the dev server
+### 7. Update Environment Types
+
+```shell
+npx wrangler types
+```
+
+### 8. Run the dev server
 
 Now you can run the dev server:
 
