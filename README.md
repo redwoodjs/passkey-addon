@@ -41,7 +41,6 @@ Add the following dependencies to your `package.json` file:
 "dependencies": {
   "@simplewebauthn/browser": "^13.1.0",
   "@simplewebauthn/server": "^13.1.1",
-  "rwsdk": "0.3.6"
 }
 ```
 
@@ -147,7 +146,13 @@ export function Home({ ctx }: RequestInfo) {
 }
 ```
 
-### 7. Run the dev server
+### 7. Generate Types
+
+```shell
+pnpm generate
+```
+
+### 8. Run the dev server
 
 The first time you run the development server, it will generate the `.wrangler` folder and local Cloudflare environment.
 
@@ -155,12 +160,6 @@ The first time you run the development server, it will generate the `.wrangler` 
 pnpm dev
 ```
 
-
-### 8. Generate Types
-
-```shell
-pnpm generate
-```
 
 This will ensure that all the environmental types needed for the Passkey Auth are generated
 
