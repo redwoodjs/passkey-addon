@@ -78,8 +78,6 @@ Update your `wrangler.jsonc` to add Durable Object bindings, environment variabl
 }
 ```
 
-Remember to change `WEBAUTHN_APP_NAME` to your app's name and `WEBAUTH_RP_ID` to a unique ID for you application. For local development, `localhost` is fine.
-
 ### 5. Update `src/worker.tsx`
 
 Modify your `src/worker.tsx` to integrate the passkey authentication and routes.
