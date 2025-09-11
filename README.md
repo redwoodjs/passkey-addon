@@ -68,12 +68,6 @@ Update your `wrangler.jsonc` to add Durable Object bindings, environment variabl
     ]
   },
 
-  // Environment variables
-  "vars": {
-    "WEBAUTHN_APP_NAME": "My Awesome App",
-    "WEBAUTHN_RP_ID": "localhost"
-  },
-
   // Migrations
   "migrations": [
     {
@@ -146,13 +140,7 @@ export function Home({ ctx }: RequestInfo) {
 }
 ```
 
-### 7. Generate Types
-
-```shell
-pnpm generate
-```
-
-### 8. Run the dev server
+### 7. Run the dev server
 
 The first time you run the development server, it will generate the `.wrangler` folder and local Cloudflare environment.
 
